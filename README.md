@@ -31,90 +31,53 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## VueJS 주요 개념 
 
+#### 라이프사이클 
 
-링크 
-[link to Google!](http://google.com)
+![VueJS 라이프 사이클](https://kr.vuejs.org/images/lifecycle.png)
 
+1. 이벤트와 라이프 사이클 초기화 작업
+1. 데이터를 감시할 수 있도록 변경 
+1. 템플릿 마운트 
+1. 데이터 변경시 템플릿 업데이트 
+1. 데이터와 이벤트 감시 취소 
+1. 라이프 사이클 종료 
 
+### 인스턴스
 
-문자
-
-**bold**
-
-*italic*
- 
-~~strike~~
-
-# This is an <h1> tag
-## This is an <h2> tag
-###### This is an <h6> tag
-
-*This text will be italic*
-_This will also be italic_
-
-**This text will be bold**
-__This will also be bold__
-
-_You **can** combine them_
-
-* Item 1
-* Item 2
-  * Item 2a
-  * Item 2b
-
-1. Item 1
-1. Item 2
-1. Item 3
-   1. Item 3a
-   1. Item 3b
-
-- Dashes work just as well
-- And if you have sub points, put two spaces before the dash or star:
-  - Like this
-  - And this
-
-네모칸 
-`#`
-
-
-
-이미지 
-![GitHub Logo](/images/logo.png)
-Format: ![Alt Text](url)
-
-블록 
-As Kanye West said:
-
-> We're living the future so
-> the present is our past.
-
-인라인 코드 
-I think you should use an
-`<addr>` element here instead.
-
-하일라이트 
+`인스턴스 선언` 
 ```javascript
-function fancyAlert(arg) {
-  if(arg) {
-    $.facebox({div:'#foo'})
-  }
-}
+new Vue({
+  // 옵션이나 컴포넌트 설정 
+  // 루트 컴포넌트로 Vue 클래스를 초기화한 최상위 객체 
+});
+```
+```javascript
+var vm = new Vue({
+  // 옵션이나 컴포넌트 설정 
+});
 ```
 
-태스크 리스트 
+### 컴포넌트 
+개발자가 HTML 태그 방식으로 UI를 덧붙일 수 있게 기능을  제공.
+  
+`컴포넌트 선언`
 
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- [x] list syntax required (any unordered or ordered list supported)
-- [x] this is a complete item
-- [ ] this is an incomplete item
+```javascripto
+Vue.component(<컴포넌트 이름>, {
+  // 옵션
+});
+```
 
-테이블
- 
-First Header | Second Header
------------- | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
+`지역 컴포넌트 선언`
 
-이모지 
-https://www.webpagefx.com/tools/emoji-cheat-sheet/
+```javascripto
+new Vue({
+  // 초기화 옵션 
+  components : {
+    <컴포넌트 이름> : <컴포넌트 옵션>
+  }
+});
+```
+
+- 지역 컴포넌트는 상위 컴포넌트의 템플릿에서만 사용 가능 
 
