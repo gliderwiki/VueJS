@@ -1,4 +1,4 @@
-'use strict'
+git pull origin master --allow-unrelated-histories'use strict'
 require('./check-versions')()
 
 process.env.NODE_ENV = 'production'
